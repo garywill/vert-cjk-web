@@ -66,7 +66,7 @@ var bodyChildNodes = document.body.childNodes
 var TBRL_OUTER=document.createElement("div"); // 原本body的子元素都放进这里再旋转。这是个浮动（absolute）的
 TBRL_OUTER.id = "TBRL_OUTER";
 
-for (var i=bodyChildNodes.length-1 ; i>=0 ; i--) 
+for (var i=0; bodyChildNodes.length>0 ;) 
   TBRL_OUTER.appendChild( bodyChildNodes[i] );
 
 TBRL_OUTER.style =`
