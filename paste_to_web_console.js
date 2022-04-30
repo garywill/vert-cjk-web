@@ -10,6 +10,9 @@ document.documentElement.innerHTML = allHtml;
 
 // document.body.innerHTML = document.body.innerHTML;
 
+const winH = window.innerHeight;
+document.body.style.width = winH + "px";
+
 var TBRL_POSITIONER = document.createElement("div"); // 用于作为body下定形的
 TBRL_POSITIONER.id = "TBRL_POSITIONER";
 
