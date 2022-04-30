@@ -55,8 +55,35 @@ for (var i=0; i<imgs.length; i++) {
 var TBRL_POSITIONER = document.createElement("div"); // 用于作为body下定形的
 TBRL_POSITIONER.id = "TBRL_POSITIONER";
 
-var W = getComputedStyle(document.body).height; // 原高 转后的宽
-var H = getComputedStyle(document.body).width; // 原宽 转后的高
+var Ws = [ // 原高
+    getComputedStyle(document.body).height,
+    document.body.clientHeight,
+    document.body.scrollHeight,
+    document.body.offsetHeight
+];
+var Hs = [ // 原宽
+    getComputedStyle(document.body).Width,
+    document.body.clientWidth,
+    document.body.scrollWidth,
+    document.body.offsetWidth
+];
+
+var Ws2 = [];
+var Hs2 = [];
+for (var i=0; i<Ws.length; i++) {
+    Ws[i] = parseInt(Ws[i]);
+    if (Ws[i] > 0)
+        Ws2.push(Ws[i]);
+}
+
+for (var i=0; i<Hs.length; i++) {
+    Hs[i] = parseInt(Hs[i]);
+    if (Hs[i] > 0)
+        Hs2.push(Hs[i]);
+}
+
+var W = Math.max(...Ws2) + "px"; // 原高 转后的宽
+var H = Math.max(...Hs2) + "px"; // 原宽 转后的高
 TBRL_POSITIONER.style.width = W;
 TBRL_POSITIONER.style.height = H;
 
