@@ -1,3 +1,13 @@
+/*
+Licensed under AGPL
+By Garywill (
+    https://garywill.github.io
+    https://space.bilibili.com/2123686105
+    https://twitter.com/garyw_gh
+)
+*/
+
+console.log("要变竖排阅读！");
 // TODO 
 // 从上到下滚一遍（让所有ajax内容和图片加载）
 // 滚回顶 （让导航栏位置正确）
@@ -24,7 +34,7 @@ var styleTag = document.createElement("style");
 styleTag.textContent = `
         @font-face{
             font-family: 'TBRL_CJK_rotate_font'; 
-            src: url('http://localhost:8899/font.php');
+            src: url('__TBRL_FONT_URL__');
         }
         * {
             font-family:  TBRL_CJK_rotate_font !important;
