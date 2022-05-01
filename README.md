@@ -70,3 +70,14 @@ Turn browser webs into vertical lined layout, like traditional CJK writing metho
 
 - [讀書尚友](https://play.google.com/store/apps/details?id=info.ebstudio.bookviewer.free) by 青空文庫ビューア （[官网](http://ebstudio.info)）。支持[iOS](https://apps.apple.com/jp/app/id1579254502)
 
+> 欢迎补充
+
+## 其他传统中华文字相关项目
+
+- 篆书字体
+  
+  https://github.com/garywill/cc-visualize/tree/resource
+
+- [全文繁简字对应关系可视化工具](https://github.com/garywill/cc-visualize)
+
+- [大术专搜](https://github.com/garywill/BigSearch/blob/master/src/README_zh.md)（一个搜索、查询工具）中收集的汉语工具部分
