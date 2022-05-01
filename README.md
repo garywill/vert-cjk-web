@@ -24,6 +24,8 @@ Turn browser webs into vertical lined layout, like traditional CJK writing metho
 
 ![](screenshots/李東垣 - 维基百科.webp)
 
+更多截图见`screenshots/`
+
 ## 原理
 
 > 也欢迎开issue探讨
