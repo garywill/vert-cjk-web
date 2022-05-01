@@ -60,3 +60,13 @@ Turn browser webs into vertical lined layout, like traditional CJK writing metho
   
   这样可以避免去除原网页js，但鼠标如何与内容交互需要一个方案
 
+## 其他竖排阅读软件
+
+- Vivaldi的阅读模式支持竖排
+
+移动端支持字定义字体，且支持竖排阅读的APP：
+
+- [静读天下](https://www.moondownload.com/chinese.html)
+
+- [讀書尚友](https://play.google.com/store/apps/details?id=info.ebstudio.bookviewer.free) by 青空文庫ビューア （[官网](http://ebstudio.info)）。支持[iOS](https://apps.apple.com/jp/app/id1579254502)
+
