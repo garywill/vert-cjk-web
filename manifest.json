@@ -10,11 +10,8 @@
     },
     "permissions": [
         "storage",
-        "activeTab",
-        "tabs",
-        "*://*/*"
+        "activeTab"
     ],
- 
     "background": {
         "scripts": [
             "background.js"
