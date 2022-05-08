@@ -94,3 +94,13 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 - [**大术专搜**](https://github.com/garywill/BigSearch/blob/master/src/README_zh.md)（一个搜索、查询工具）中收集的汉语工具部分
 
+## 玩而后赏
+
+子曰，玩而予赏，善莫大焉？<br>
+又曰，玩而不赏，良心安焉？<br>
+老夫谢过！<br>
+<a target="_blank" href="https://github.com/garywill/receiving/blob/master/receiving_methods.md"><img src="https://gitlab.com/garywill/receiving/raw/master/receivingcode.png" alt="打赏链接" width="450"></a><br>
+虽然，小小玩意，不足挂齿；<br>
+亦是，卅年老刀，献丑于此。<br>
+其实，多赏非求，少许亦可。<br>
+进者，[参观主页](https://garywill.github.io)，玩物更多。
