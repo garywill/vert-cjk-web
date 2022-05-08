@@ -59,7 +59,12 @@ for (var i=0; i<imgs.length; i++) {
     const w = parseInt(getComputedStyle(img).width);
     const h = parseInt(getComputedStyle(img).height);
     var scale = Math.min(w,h) / Math.max(w,h);
-    img.style.transform = ` rotate(-90deg) scale(${scale}) `;
+    
+    var transform = "";
+    transform = "rotate(-90deg) ";
+    if (scale > 0)
+        transform += ` scale(${scale}) `;
+    img.style.transform = transform;
 }
 // ============ 旋转整个网页 =======================
 var TBRL_POSITIONER = document.createElement("div"); // 用于作为body下定形的
