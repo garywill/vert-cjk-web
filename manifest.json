@@ -4,6 +4,9 @@
     "manifest_version": 2,
     "version": "0.3.0",
     "homepage_url": "https://garywill.github.io",
+    "icons": {
+        "128": "icon.png"
+    },
     "developer": {
         "name": "Garywill",
         "url": "https://garywill.github.io"
@@ -18,7 +21,7 @@
         ]
     },
     "browser_action": {
-        "default_title": "Vertical Line-ize CJK"
+        "default_icon": "icon.png"
     },
     "web_accessible_resources": [
         "wqy-microhei-rotate90cjk.ttf"
