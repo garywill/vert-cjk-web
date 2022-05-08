@@ -4,7 +4,9 @@ Turn browser webs into vertical lined layout, like traditional CJK writing metho
 
 ## 使用
 
-1. 安装。在Firefox/Chrome的addon dev模式中load进去
+1. 安装
+   - [AMO Firefox Addon](https://addons.mozilla.org/firefox/addon/vertical-ize-cjk-lines/)
+   - 在Firefox/Chrome的addon dev模式中load进去
 2. 打开要阅读的网页
    1. 手动从上到下滚动一遍，让所有ajax内容和图片加载
    2. 手动滚回顶部，让导航栏位置正确
