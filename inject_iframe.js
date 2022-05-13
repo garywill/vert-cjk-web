@@ -10,7 +10,9 @@ By Garywill (
 console.log("竖排阅读iframe！");
 
 
-var styleTag = document.createElement("style");
+var styleTag = document.getElementById("TBRL_STYLE_TAG") || document.createElement("style");
+styleTag.id = "TBRL_STYLE_TAG";
+
 styleTag.textContent = `
         @font-face{
             font-family: 'TBRL_CJK_rotate_font'; 
@@ -26,23 +28,28 @@ document.head.appendChild(styleTag);
 var imgs = document.getElementsByTagName("img");
 imgs = Array.from(imgs);
 
-var alinks = document.getElementsByTagName("a");
-for (var i=0; i<alinks.length; i++) {
-    alink = alinks[i];
-    if ( getComputedStyle(alink).backgroundImage != "none" )
-        imgs.push(alink);
-}
+// var alinks = document.getElementsByTagName("a");
+// for (var i=0; i<alinks.length; i++) {
+//     alink = alinks[i];
+//     if ( getComputedStyle(alink).backgroundImage != "none" )
+//         imgs.push(alink);
+// }
 
 
 for (var i=0; i<imgs.length; i++) {
     const img = imgs[i];
-    const w = parseInt(getComputedStyle(img).width);
-    const h = parseInt(getComputedStyle(img).height);
-    var scale = Math.min(w,h) / Math.max(w,h);
     
-    var transform = "";
-    transform = "rotate(-90deg) ";
-    if (scale > 0)
-        transform += ` scale(${scale}) `;
-    img.style.transform = transform;
+    if (img.getAttribute("TBRL_VERTed") === null) {
+        const w = parseInt(getComputedStyle(img).width);
+        const h = parseInt(getComputedStyle(img).height);
+        var scale = Math.min(w,h) / Math.max(w,h);
+        
+        var transform = "";
+        transform = "rotate(-90deg) ";
+        if (scale > 0)
+            transform += ` scale(${scale}) `;
+        img.style.transform = transform;
+        
+        img.setAttribute("TBRL_VERTed", "1");
+    }
 }

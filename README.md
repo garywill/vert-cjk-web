@@ -11,13 +11,13 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 3. 点工具栏上的按钮，转换完成
 4. 使用`鼠标滚轮`右左滚动，使用`shift+鼠标滚轮`上下滚动
 
+> Use on your own risk!
+
 ## 效果及兼容性
 
-网页兼容性约80%。
+网页兼容性约85%。文字选择可用。可缩放
 
-转换后，原网页的js建立的交互性、链接点击有所损失，文字选择可用。
-
-可缩放。
+转换后，原网页的js建立的交互性、链接点击、表单提交稍有损失（因`<iframe>` 及其 sandbox）
 
 这个项目目前位于poc阶段
 
@@ -55,6 +55,14 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 #### 不正经方案
 
+- 使用旋转CJK的字体和旋转图片后，用canvas或Headless browser等方案对原网页进行实时截图，然后旋转展示截到的图给用户。
+  
+  这样可以避免影响原网页自身建立的交互js，但鼠标如何与内容交互需要一个方案
+
+- 避免使用自己的ttf：
+  
+  遍历每个文本节点，把每个CJK加`<span>`后单独旋转
+
 - 在Firefox的Browser Toolbox（非web toolbox）中将
   
   ```
@@ -62,10 +70,6 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
   ```
   
   旋转。失败，Firefox崩溃
-
-- 使用旋转CJK的字体和旋转图片后，用canvas或Headless browser等方案对原网页进行实时截图，然后旋转展示截到的图给用户。
-  
-  这样可以避免影响原网页自身建立的交互js，但鼠标如何与内容交互需要一个方案
 
 - 旋转屏幕，系统有这种设置。有些Linux WM据说可以旋转一个窗口
 

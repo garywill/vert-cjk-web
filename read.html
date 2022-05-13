@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>縱讀web</title>
+        <script type="text/javascript" src="read.js"> </script>
+    </head>
+    <body style="overflow: hidden; " >
+        <div hidden>
+            <button style="padding: 0px;" >注入</button>
+        </div>
+        
+        <iframe id="TBRL_VERT_IFRAME" sandbox="
+            allow-downloads-without-user-activation  allow-forms  allow-modals  allow-orientation-lock  allow-pointer-lock  allow-popups  allow-popups-to-escape-sandbox  allow-presentation  allow-scripts  allow-storage-access-by-user-activation    allow-top-navigation-by-user-activation  allow-same-origin
+        " 
+        style="
+                    width: calc( 100vh - 10px );
+            height: calc( 100vw - 10px );
+            transform: rotate(90deg);
+            transform-origin: top left;
+            left: calc( 100vw - 5px );
+            position: absolute;
+            top: 5px;
+        "
+        >
+        </iframe>
+    </body>
+</html>
