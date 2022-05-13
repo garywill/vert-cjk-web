@@ -2,7 +2,7 @@
     "name": "Vertical-ize CJK lines",
     "description": "Make web lines vertical for CJK (Chinese, Japanese, Korean) traditional",
     "manifest_version": 2,
-    "version": "0.3.2",
+    "version": "0.4.0",
     "homepage_url": "https://garywill.github.io",
     "icons": {
         "128": "icon.png"
@@ -13,7 +13,10 @@
     },
     "permissions": [
         "storage",
-        "activeTab"
+        "activeTab",
+        "*://*/*",
+        "tabs",
+        "webNavigation"
     ],
     "background": {
         "scripts": [
@@ -28,6 +31,11 @@
     ],
     "commands": {
         "_execute_browser_action": {
+        }
+    }, 
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{75bc7e46-2d9e-4d11-bdbc-90f783529362}"
         }
     }
 } 
