@@ -9,8 +9,7 @@ By Garywill (
 
 const URL_READ_HTML = chrome.runtime.getURL("read.html");
 chrome.browserAction.onClicked.addListener(async (tab, OnClickData) => {
-    console.log("click browser action btn");
-    console.log(tab.id, tab.url);
+    console.log("click browser action btn", tab.id, tab.url);
     
     const oURL = new URL(tab.url);
     if (oURL.origin + oURL.pathname === URL_READ_HTML ) {
@@ -22,13 +21,19 @@ chrome.browserAction.onClicked.addListener(async (tab, OnClickData) => {
     else 
     {
         console.log("打開新頁縱讀");
-        await chrome.webRequest.onHeadersReceived.addListener(modifyHttpHeader, {tabId: tab.id, types: ["sub_frame"] , urls: ["<all_urls>"] }, ["blocking", "responseHeaders"] );
+        
+//         await addResponseModifyer(tab.id);
+        
         await chrome.tabs.update(tab.id, {url: URL_READ_HTML + "?url=" + encodeURIComponent(tab.url)});
     }
 });
+async function addResponseModifyer(tabId) {
+    console.log("添加response listener", tabId);
+    try { await chrome.webRequest.onHeadersReceived.removeListener(modifyHttpHeader); } catch(err) {}
+    await chrome.webRequest.onHeadersReceived.addListener(modifyHttpHeader, {tabId: tabId, types: ["sub_frame"] , urls: ["<all_urls>"] }, ["blocking", "responseHeaders"] );
+}
 function modifyHttpHeader(details) {
-    console.log("http头修改器");
-    console.log(details);
+    console.log("http头修改器", details);
     
     const dURL = new URL(details.documentUrl);
     if (dURL.origin + dURL.pathname !== URL_READ_HTML ) 
@@ -52,13 +57,17 @@ function modifyHttpHeader(details) {
 }
 
 chrome.runtime.onMessage.addListener(async function(message, sender) {
-    console.log("background receive message");
-    console.log("message:", message);
-    console.log("sender:", sender);
+    console.log("background receive message", message, sender);
     
-    if (message["message"] !== undefined && message["message"] == "inject-to-my-tab-iframe" ) {
-        const tabId = sender.tab.id;
-        await inject_to_tab_iframe(tabId);
+    const tabId = sender.tab.id;
+            
+    if (message["message"] !== undefined ) {
+        if (message["message"] == "inject-to-my-tab-iframe" ) {
+            await inject_to_tab_iframe(tabId);
+        }
+        else if (message["message"] == "add-reponse-modifyer-to-my-tab" ) {
+            await addResponseModifyer(tabId);
+        }
     }
 
 });
@@ -73,7 +82,7 @@ async function inject_to_tab_iframe(tabId) {
     await chrome.webNavigation.getAllFrames(
         {tabId: tabId},
         async function(r) {
-            console.log(r);
+            console.log(tabId, "subframes:", r);
             for (var i=1; i<r.length; i++) {
                 const frameId = r[i].frameId;
                 

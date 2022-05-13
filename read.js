@@ -13,7 +13,10 @@ async function sleep(ms) {
 }
 
 async function init() {
-    
+    await chrome.runtime.sendMessage({
+        "message": "add-reponse-modifyer-to-my-tab"
+    });
+      
     var oURL = new URL(document.location.href);
     var url_to_read = decodeURIComponent( oURL.searchParams.get("url") );
     
@@ -21,15 +24,16 @@ async function init() {
         
         var IFRAME = document.getElementById("TBRL_VERT_IFRAME");
         
+//         await sleep(200);
         IFRAME.src = url_to_read;
     
         await sleep(1000);
-        chrome.runtime.sendMessage({
+        await chrome.runtime.sendMessage({
             "message": "inject-to-my-tab-iframe"
         });
         
-        await sleep(1000);
-        chrome.runtime.sendMessage({
+        await sleep(2000);
+        await chrome.runtime.sendMessage({
             "message": "inject-to-my-tab-iframe"
         });
     }
