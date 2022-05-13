@@ -26,6 +26,18 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 更多截图见`screenshots/`
 
+## 形也
+
+西式橫行，東式漸微。今物便捷，故從古者寡。古法千萬種，不需盡取，但古時有妙意妙道而爲今人所遺失，非不痛哉，當力存之，並正解之，莫令不復。
+
+如何之爲存？**以神爲主，以形作從**。
+
+何爲其「神」者？民知曉且正解其道、理、義、用、辨也。
+
+書、文、字者，媒也。**今獻此右起縱書豎排排版，形也**，略顯古形於今人眼前一二然。
+
+神形俱存者，存。神存形易者，雖次亦存。若神失而形存者，非存也。
+
 ## 原理
 
 > 也欢迎开issue探讨
@@ -50,7 +62,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 #### 正经方案
 
-- 让浏览器原生支持。等个大神出现改Firefox/Chromium源代码。若w3c定个标准我们就完成任务了
+- 让浏览器原生支持。等个大神出现改Firefox/Chromium源代码。若能说动浏览器商我们就完成任务了
 
 - 使用CSS现有的[`writing-mode: vertical-rl`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)（支持不全）。但这需要整个网页开始设计时就考虑
 
@@ -58,7 +70,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 - 使用旋转CJK的字体和旋转图片后，用canvas或Headless browser等方案对原网页进行实时截图，然后旋转展示截到的图给用户。
   
-  这样可以避免影响原网页自身建立的交互js，但鼠标如何与内容交互需要一个方案
+  这样可以避免影响原网页，但鼠标如何与内容交互需要一个方案
 
 - 避免使用自己的ttf：
   
@@ -88,9 +100,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 ## 其他传统中华文字相关项目
 
-- 篆书字体收集
-  
-  [GitHub - garywill/cc-visualize at resource](https://github.com/garywill/cc-visualize/tree/resource)
+- [一些篆书字体收集](https://gitlab.com/garywill/cc-resources/-/releases)
 
 - [全文繁简字对应关系可视化工具](https://github.com/garywill/cc-visualize)
 
