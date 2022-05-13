@@ -16,7 +16,9 @@
         "activeTab",
         "<all_urls>",
         "tabs",
-        "webNavigation"
+        "webNavigation",
+        "webRequest",
+        "webRequestBlocking"
     ],
     "background": {
         "scripts": [

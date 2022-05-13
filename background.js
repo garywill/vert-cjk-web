@@ -22,21 +22,34 @@ chrome.browserAction.onClicked.addListener(async (tab, OnClickData) => {
     else 
     {
         console.log("打開新頁縱讀");
-        await chrome.tabs.create({url: URL_READ_HTML + "?url=" + encodeURIComponent(tab.url)});
+        await chrome.webRequest.onHeadersReceived.addListener(modifyHttpHeader, {tabId: tab.id, types: ["sub_frame"] , urls: ["<all_urls>"] }, ["blocking", "responseHeaders"] );
+        await chrome.tabs.update(tab.id, {url: URL_READ_HTML + "?url=" + encodeURIComponent(tab.url)});
+    }
+});
+function modifyHttpHeader(details) {
+    console.log("http头修改器");
+    console.log(details);
+    
+    const dURL = new URL(details.documentUrl);
+    if (dURL.origin + dURL.pathname !== URL_READ_HTML ) 
+        return;
+
+    if (details.parentFrameId !== 0)
+        return;
+    
+    for (var i=0; i<details.responseHeaders.length; i++)
+    {
+        const cur_header = details.responseHeaders[i];
+        if (cur_header.name.toLowerCase() === "x-frame-options"  )
+        {
+            console.log("删除一个X-Frame-Options");
+            details.responseHeaders.splice(i,1);
+            i--;
+        }
     }
     
-//     var code_inject = "";
-//     await fetch('inject_actionbtn.js').then(response => response.text()).then(textString => {
-//         code_inject = textString;
-//     });
-// //     code_inject = code_inject.replaceAll("__TBRL_FONT_URL__", chrome.runtime.getURL("wqy-microhei-rotate90cjk.ttf"));
-
-//     var result = await chrome.tabs.executeScript({
-//         matchAboutBlank: false,
-//         code: code_inject,
-//         runAt: "document_start"
-//     });
-});
+    return {responseHeaders: details.responseHeaders};
+}
 
 chrome.runtime.onMessage.addListener(async function(message, sender) {
     console.log("background receive message");
@@ -51,26 +64,29 @@ chrome.runtime.onMessage.addListener(async function(message, sender) {
 });
 
 async function inject_to_tab_iframe(tabId) {
+    var code_inject = "";
+    await fetch('inject_iframe.js').then(response => response.text()).then(textString => {
+        code_inject = textString;
+    });
+    code_inject = code_inject.replaceAll("__TBRL_FONT_URL__", chrome.runtime.getURL("wqy-microhei-rotate90cjk.ttf"));
+    
     await chrome.webNavigation.getAllFrames(
         {tabId: tabId},
         async function(r) {
             console.log(r);
-            const frameId = r[1].frameId;
-            
-            var code_inject = "";
-            await fetch('inject_iframe.js').then(response => response.text()).then(textString => {
-                code_inject = textString;
-            });
-            code_inject = code_inject.replaceAll("__TBRL_FONT_URL__", chrome.runtime.getURL("wqy-microhei-rotate90cjk.ttf"));
-            
-            chrome.tabs.executeScript(
-                tabId,  
-                {
-                    frameId: frameId,
-                    code: code_inject
-                    
-                }
-            )
+            for (var i=1; i<r.length; i++) {
+                const frameId = r[i].frameId;
+                
+                
+                chrome.tabs.executeScript(
+                    tabId,  
+                    {
+                        frameId: frameId,
+                        code: code_inject
+                        
+                    }
+                )
+            }
             
         }
     );

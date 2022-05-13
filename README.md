@@ -7,9 +7,10 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 1. 安装
    - [AMO Firefox Addon](https://addons.mozilla.org/firefox/addon/vertical-ize-cjk-lines/)
    - 在Firefox/Chrome的addon dev模式中load进去
-2. 打开网页
-3. 点工具栏上的按钮，转换完成
+2. 打开一个网页
+3. 点工具栏上的按钮，开始竖排阅读
 4. 使用`鼠标滚轮`右左滚动，使用`shift+鼠标滚轮`上下滚动
+5. 有新内容通过ajax加载，或导航至新页面后，可再点工具栏按钮
 
 > Use on your own risk!
 
@@ -17,7 +18,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 网页兼容性约85%。文字选择可用。可缩放
 
-转换后，原网页的js建立的交互性、链接点击、表单提交稍有损失（因`<iframe>` 及其 sandbox）
+原网页的js建立的交互性、链接点击、表单提交有极少量的损失（因`<iframe>` 及其 sandbox）
 
 这个项目目前位于poc阶段
 
@@ -35,7 +36,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 1. 使用`<iframe>`装载原网页
 
-2. 使用CSS`transform`的`rotate`把**整个`<iframe>`旋转**
+2. 使用CSS`transform`的`rotate`把整个`<iframe>`旋转
 
 3. 使用已旋转过CJK的自定义字体
    
