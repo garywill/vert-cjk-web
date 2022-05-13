@@ -35,7 +35,10 @@ imgs = Array.from(imgs);
 //         imgs.push(alink);
 // }
 
-
+var vids = document.getElementsByTagName("video");
+for (var i=0; i<vids.length; i++) {
+    imgs.push( vids[i] );
+}
 for (var i=0; i<imgs.length; i++) {
     const img = imgs[i];
     
