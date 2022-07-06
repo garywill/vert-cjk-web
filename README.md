@@ -2,7 +2,7 @@
 
 Make webs render in vertical lined layout, like traditional CJK writing method in east asian culture circle.
 
-另外，推荐 [汉字关联关系可视化工具 暨 汉字字符合法性检测](https://github.com/garywill/cc-visualize)
+另外，推荐 [既适合程序员，也适合中文电子文献整编人员 的 「全文汉字关联关系可视化工具 & 字符信息、不寻常字符检视器」](https://github.com/garywill/cc-visualize)
 
 ## 使用
 
