@@ -2,7 +2,7 @@
 
 Make webs render in vertical lined layout, like traditional CJK writing method in east asian culture circle.
 
-另外，推荐 [既适合程序员，也适合中文电子文献整编人员 的 「全文汉字关联关系可视化工具 & 字符信息、不寻常字符检视器」](https://github.com/garywill/cc-visualize)
+> 另外，推荐 [既适合程序员，也适合中文电子文献整编人员 的 「全文汉字关联关系可视化工具 & 字符信息、不寻常字符检视器」](https://github.com/garywill/cc-visualize)
 
 ## 使用
 
@@ -14,7 +14,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 4. 使用`鼠标滚轮`右左滚动，使用`shift+鼠标滚轮`上下滚动
 5. 有新内容通过ajax加载，或导航至新页面后，可再点工具栏按钮
 
-> Use on your own risk!
+> **警告**：Use on your own risk!
 
 ## 效果及兼容性
 
@@ -22,7 +22,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 原网页的js建立的交互性、链接点击、表单提交有极少量的损失（因`<iframe>` 及其 sandbox）
 
-这个项目目前位于poc阶段
+**这个项目目前位于poc阶段！不保证显示准确性及数据安全性！** 建议用分开的浏览器体验（或者，不用它来打开涉及账号或数据的网站）
 
 ![](screenshots/李東垣-维基百科.webp)
 
@@ -30,7 +30,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 ## Sample links
 
-安装好后，可以点开以下sample links，点击工具栏按钮开始享受竖排阅读
+安装好后，可以点开以下sample links，点击工具栏按钮开始体验竖排阅读
 
 - **纯中文**
   
@@ -50,7 +50,6 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
   
   纯朝鲜文字：[하계 올림픽](https://ko.wikipedia.org/wiki/%ED%95%98%EA%B3%84_%EC%98%AC%EB%A6%BC%ED%94%BD)
 
-  
 ## 形也
 
 西式橫行，東式漸微。今物便捷，故從古者寡。
@@ -75,7 +74,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 简要描述：
 
-1. 使用`<iframe>`装载原网页
+1. 使用`<iframe>`装载原网页（为了提高兼容性，需要降低安全性，修改返回头）
 
 2. 使用CSS`transform`的`rotate`把整个`<iframe>`旋转
 
