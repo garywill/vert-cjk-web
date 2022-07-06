@@ -35,8 +35,8 @@ async function addResponseModifyer(tabId) {
 function modifyHttpHeader(details) {
     console.log("http头修改器", details);
     
-    const dURL = new URL(details.documentUrl);
-    if (dURL.origin + dURL.pathname !== URL_READ_HTML ) 
+    const dURL = new URL(details.documentUrl || details.initiator);
+    if ( ! (dURL.origin + dURL.pathname) . startsWith ( chrome.runtime.getURL('') ) ) 
         return;
 
     if (details.parentFrameId !== 0)
@@ -83,11 +83,12 @@ async function inject_to_tab_iframe(tabId) {
         {tabId: tabId},
         async function(r) {
             console.log(tabId, "subframes:", r);
-            for (var i=1; i<r.length; i++) {
+            for (var i=0; i<r.length; i++) {
+                
                 const frameId = r[i].frameId;
-                
-                
-                chrome.tabs.executeScript(
+                if (frameId === 0)
+                    continue;
+                await chrome.tabs.executeScript(
                     tabId,  
                     {
                         frameId: frameId,
