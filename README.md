@@ -2,11 +2,13 @@
 
 Make webs render in vertical lined layout, like traditional CJK writing method in east asian culture circle.
 
+另外，推荐 [汉字关联关系可视化工具 暨 汉字字符合法性检测](https://github.com/garywill/cc-visualize)
+
 ## 使用
 
 1. 安装
    - [AMO Firefox Addon](https://addons.mozilla.org/firefox/addon/vertical-ize-cjk-lines/)
-   - 在Firefox/Chrome的addon dev模式中load进去
+   - 或，在Firefox/Chrome的addon dev模式中load进去
 2. 打开一个网页
 3. 点工具栏上的按钮，开始竖排阅读
 4. 使用`鼠标滚轮`右左滚动，使用`shift+鼠标滚轮`上下滚动
@@ -26,6 +28,29 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 更多截图见`screenshots/`
 
+## Sample links
+
+安装好后，可以点开以下sample links，点击工具栏按钮开始享受竖排阅读
+
+- **纯中文**
+  
+  试试用纵书读经是什么感觉：[《金剛經》](https://zh.wikisource.org/wiki/%E9%87%91%E5%89%9B%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BE%85%E8%9C%9C%E7%B6%93_(%E9%B3%A9%E6%91%A9%E7%BE%85%E4%BB%80)#%E6%AD%A3%E6%96%87)|[《道德經》](https://zh.wikisource.org/wiki/%E8%80%81%E5%AD%90_(%E6%A0%A1%E8%A9%81%E7%89%88)#%E9%81%93%E7%B6%93)
+  
+  读诗呢：[《夢遊天姥吟留別》](https://zh.wikisource.org/wiki/%E5%A4%A2%E9%81%8A%E5%A4%A9%E5%A7%A5%E5%90%9F%E7%95%99%E5%88%A5)|[《琵琶行》](https://zh.wikisource.org/wiki/%E7%90%B5%E7%90%B6%E8%A1%8C)
+  
+  直接来维基大典看文言文：[　漢　](https://zh-classical.wikipedia.org/wiki/%E6%BC%A2)
+
+- **中西混合**：[Mozilla基金会](https://zh.wikipedia.org/wiki/Mozilla%E5%9F%BA%E9%87%91%E6%9C%83)
+
+- **日文**：[　唐　](https://ja.wikipedia.org/wiki/%E5%94%90)
+
+- **韩文**
+  
+  朝鲜文字与汉字混合：[《易經》](https://ko.wikisource.org/wiki/%EC%97%AD%EA%B2%BD#%E7%AC%AC%E4%B8%80%E5%8D%A6_%E4%B9%BE)
+  
+  纯朝鲜文字：[하계 올림픽](https://ko.wikipedia.org/wiki/%ED%95%98%EA%B3%84_%EC%98%AC%EB%A6%BC%ED%94%BD)
+
+  
 ## 形也
 
 西式橫行，東式漸微。今物便捷，故從古者寡。
@@ -36,7 +61,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 何爲其「神」者？民知曉且正解其道、理、義、用、辨也。
 
-書、文、字者，媒也。**今獻此右起縱書豎排排版，形也**，仿古玩物，略顯古形於今人眼前一二然。
+何謂「形」者？書、文、字者，媒也。**今獻此右起縱書豎排排版，形也**，仿古玩物，略顯古形於今人眼前一二然。
 
 神形俱存者，存。神存形易者，雖次亦存。若神失而形存者，非存也。亦當曉之。
 
@@ -68,7 +93,7 @@ Make webs render in vertical lined layout, like traditional CJK writing method i
 
 - 让浏览器原生支持。等个大神出现改Firefox/Chromium源代码。若能说动浏览器商我们就完成任务了
 
-- 使用CSS现有的[`writing-mode: vertical-rl`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)（支持不全）。但这需要整个网页开始设计时就考虑
+- 使用CSS现有的[`writing-mode: vertical-rl`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)（支持不全）。但这需要整个网页开始设计时就考虑。现有网页只能重新设计
 
 #### 不正经方案
 
